@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const request =require('request');
+const fetch =require('fetch');
 
 
 const weatherDetail=(lat,long,callback)=>{
@@ -13,7 +13,6 @@ const weatherDetail=(lat,long,callback)=>{
                     const data=data.body.current;
                     callback(undefined, "It is "+data.weather_descriptions[0]+" but the temperature is "+chalk.green(data.temperature) +' and it feels like '+data.feelslike
                     )
-                  
                 }
             }
         )
