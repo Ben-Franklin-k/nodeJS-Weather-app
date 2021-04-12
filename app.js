@@ -7,7 +7,7 @@ const publicDir=path.join(__filename, "../public")
 const viewsDir=path.join(__filename, "../public/Templates/views")
 const partialsDir=path.join(__filename, "../public/Templates/partials")
 const app=express();
-
+const port =process.env.PORT||3000
 hbs.registerPartials(partialsDir)
 app.set("view engine",'hbs')
 app.set("views",viewsDir)
@@ -60,6 +60,6 @@ app.get('*',(req,res)=>{
         message:"Page not found"
     })
 })
-app.listen(3000,()=>{
-    console.log("Listening to 3000")
+app.listen(port,()=>{
+    console.log(`Listening to ${port}`)
 })
